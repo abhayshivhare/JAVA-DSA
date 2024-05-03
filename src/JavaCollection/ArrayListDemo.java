@@ -22,6 +22,7 @@ public class ArrayListDemo {
 		System.out.println("element that got replaced is :" + arrayList.set(1, 112));
 		
 		System.out.println("Array List :"+ arrayList);
+		System.out.println("Checking Commmit");
 		
 		
 		
