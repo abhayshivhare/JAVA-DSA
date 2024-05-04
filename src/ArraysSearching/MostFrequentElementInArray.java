@@ -1,8 +1,10 @@
 package ArraysSearching;
 
+import java.util.Map.Entry;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
 
 //Input : arr[] = {1, 3, 2, 1, 4, 1}
 //Output : 1
@@ -13,11 +15,12 @@ import java.util.Map;
 public class MostFrequentElementInArray {
 
 	public static void main(String[] args) {
-		int arr1[] = {2,1, 2, 2, 2,1, 4, 1,1};
+		int arr1[] = {1,2,1, 2, 2, 2,1, 4, 1,1};
 		int arr2[] = {10, 20, 10, 20, 30, 20, 20};
 		//mostFrequentElementInArray(arr2);
 		
-		mostFrequentElementInArrayUsingSingleLoop(arr1);
+		//mostFrequentElementInArrayUsingSingleLoop(arr1);
+		mostFrequentElementInArrayUsingHashMap(arr1);
 	}
 	
 	//Two Loop Methods : Tc : O(n^2) as two for loop are running.
@@ -87,9 +90,9 @@ public class MostFrequentElementInArray {
 	
 	static void mostFrequentElementInArrayUsingHashMap(int arr[])
 	{
-		int length= arr.length-1;
+		int length= arr.length;
 		int maxcount=0;
-		int count=1;
+		
 		int mostfrequenetelement=1;
 		Map<Integer, Integer> hmap= new HashMap<Integer,Integer>();
 		
@@ -98,6 +101,7 @@ public class MostFrequentElementInArray {
 			int key = arr[i];
 			if(hmap.containsKey(key))
 			{
+				int count=hmap.get(key);
 				count ++;
 				hmap.put(key, count);
 		    }
@@ -105,7 +109,16 @@ public class MostFrequentElementInArray {
 			hmap.put(key, 1);
 		}
 		
-		
+		for (Entry<Integer, Integer> value: hmap.entrySet())
+		{
+			if(maxcount < value.getValue())
+			{
+				mostfrequenetelement= value.getKey();
+				maxcount= value.getValue();
+	
+			}
+			
+		}
 		
 		
 		System.out.println("Most frequent element is: " + mostfrequenetelement + " and its occurence is : " + maxcount);
