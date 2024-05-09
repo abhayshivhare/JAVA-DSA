@@ -9,7 +9,8 @@ public class MajorityElementInASortedArray {
 		int arr[] = { 1, 2, 3, 3, 3, 3, 10 }; // x = 3
 		int arr2[] = { 1, 1, 2, 4, 4, 4, 6, 6 }; // x = 4
 		int arr3[] = { 1, 1, 1, 2, 2 };// x = 1
-		isMajority(arr3, 1);
+		//isMajority(arr3, 1);
+		isMajorityUsingHashMap(arr3, 1);
 	}
 
 	//bruteforce mrthod
@@ -37,6 +38,7 @@ public class MajorityElementInASortedArray {
 			hmap.put(i, hmap.getOrDefault(i, 0) + 1);
 
 		}
+		System.out.println(hmap);
 		int count = hmap.getOrDefault(x, 0);
 		if (count > length / 2) {
 
