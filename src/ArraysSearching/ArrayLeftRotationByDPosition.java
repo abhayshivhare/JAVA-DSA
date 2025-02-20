@@ -1,5 +1,12 @@
 package ArraysSearching;
 
+
+
+//git status
+//git add .
+//git commit -m "Your commit message"
+//git push origin main  # Optional if pushing to a remote repository
+
 //Given an array of integers arr[] of size N and an integer, the task is to rotate the array elements to the left by d positions.
 //Examples:  
 //
