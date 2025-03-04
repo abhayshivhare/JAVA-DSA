@@ -27,6 +27,11 @@ Notice how MySubClass has to implement the abstract method abstractMethod() from
 The only time a subclass of an abstract class is not forced to implement all abstract methods of its superclass, is if the subclass is also an abstract class.
 */public class DemoAbstractImplement extends DemoAbstract {
 
+	
+//	DemoAbstractImplement ()
+//	{
+//		super();
+//	}
 	public static void main (String[] args) {
 		
 		DemoAbstractImplement dai = new DemoAbstractImplement();
@@ -34,8 +39,11 @@ The only time a subclass of an abstract class is not forced to implement all abs
 		dai.swim();
 		dai.drink();
 		dai.dance();
-		
+		System.out.println("x =:" + dai.x);
+		System.out.println("y =:" + dai.y);
+		System.out.println("a =:" + dai.a);
 		System.out.println(" hello 1");
+		
 		
 		//System.out.println(" hello ad :" + ad);
 //		ad.eat();
