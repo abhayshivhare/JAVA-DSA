@@ -2,21 +2,21 @@ package Stack;
 
 public class StackUsingLinkedList {
 
-	Node head;
+	private Node head;
 
-	StackUsingLinkedList() {
+	public StackUsingLinkedList() {
 		this.head = null;
 	}
 
-	boolean isEmpty() {
+	public boolean isEmpty() {
 		return head == null;
 
 	}
 
-	void push(int element) {
-		Node new_node = new Node(element);
-		new_node.next = head;
-		head = new_node;
+	public void push(int element) {
+		Node newnode = new Node(element);
+		newnode.next = head;
+		head = newnode;
 
 	}
 
@@ -34,10 +34,9 @@ public class StackUsingLinkedList {
 	int peek() {
 		if (!isEmpty()) {
 			return head.data;
-		}
-		else
+		} else
 			System.out.println("stack is underflow");
-			return 0;
+		 throw new IllegalStateException("Stack is empty");
 
 	}
 
