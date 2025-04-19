@@ -30,9 +30,9 @@ Example 2:
 
 Input: nums = [0]
 Output: [0]*/
-		
+
 public class MoveAllZeroesToEndOfArray {
-	
+
 	/*
 	 * Optimal Approach(Using 2 pointers): We can optimize the approach using 2
 	 * pointers i.e. i and j. The pointer j will point to the first 0 in the array
@@ -53,34 +53,30 @@ public class MoveAllZeroesToEndOfArray {
 	 * again point to the first zero. Finally, our array will be set in the right
 	 * manner.
 	 */
-	static void moveZeroes(int [] nums)
-	{
-		int j=0;
-		for(int i=0 ; i<nums.length; i++)
-		{
-			if(nums[i]!=0)
-			{
-				nums[j++]= nums[i];
+	static void moveZeroes(int[] nums) {
+		int j = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != 0) {
+				nums[j++] = nums[i];
 			}
+			System.out.print("Nums of j " + nums[j]);
 		}
 		System.out.print("araay ");
-		for(int i : nums)
-		{
-			System.out.print(i+",");
+		for (int i : nums) {
+			System.out.print(i + ",");
 		}
 		// Step 2: Fill the rest of the array with zeros
-        while (j < nums.length) {
-        	nums[j++] = 0;
-        }
-        System.out.print("final array");
-		for(int i : nums)
-		{
-			System.out.println(i+",");
+		while (j < nums.length) {
+			nums[j++] = 0;
+		}
+		System.out.print("final array");
+		for (int i : nums) {
+			System.out.println(i + ",");
 		}
 	}
 
 	public static void main(String[] args) {
-		int[] arr = {  1,2,0,1,0,4,0 };
+		int[] arr = { 1, 2, 0, 1, 0, 4, 0 };
 		moveZeroes(arr);
 
 	}
